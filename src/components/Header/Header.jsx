@@ -2,6 +2,8 @@ import NavigationItem from "../NavigationItem/NavigationItem";
 import "./header.css";
 import { UsersContext } from "../../App";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+		import { HOME_PATH, PRODUCTS_PATH, REGISTRATION_PATH, REFINPUT_PATH, } from '../../constants/routes-links';
 
 const Header = () => {
 
@@ -31,7 +33,12 @@ const Header = () => {
 
   return (
     <header>
-      {navElements.map((element) => {
+		<Link to={HOME_PATH}>Home</Link>
+		<Link to={PRODUCTS_PATH}>Products</Link>
+		<Link to={REGISTRATION_PATH}>Registaration</Link>
+		<Link to='/refinput/hello'>Ref Input</Link>
+		<Link to='/refinput/hello'>Ref Input</Link>
+      {/* {navElements.map((element) => {
         return (
           <NavigationItem
             key={element.text}
@@ -40,7 +47,7 @@ const Header = () => {
             description={element.description}
           />
         );
-      })}
+      })} */}
       <div>User Count: {usersCount}</div>
     </header>
   );

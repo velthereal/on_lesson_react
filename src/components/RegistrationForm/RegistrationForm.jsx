@@ -1,8 +1,11 @@
 import classNames from "classnames";
 import { isEmpty } from "lodash";
 
+import { useNavigate } from "react-router-dom";
+
 import Input from "../Input";
 import UserCard from "../UserCard/UserCard";
+import { HOME_PATH, REFINPUT_PATH } from '../../constants/routes-links'
 
 import { useState, useContext } from "react";
 import { UsersContext } from "../../App";
@@ -39,6 +42,8 @@ const DEFAULT_USERS = [
 ];
 
 const RegistrationForm = () => {
+
+	const navigator = useNavigate();
   
   const contextData = useContext(UsersContext);
 
@@ -107,6 +112,10 @@ const RegistrationForm = () => {
     setEmail(currentUser.email);
   };
 
+	if(users.length >= 7) {
+		navigator(REFINPUT_PATH)
+	}
+
 
   return (
     <div className={styles['common']}>
@@ -140,6 +149,10 @@ const RegistrationForm = () => {
             </button>
           )
         }
+
+		<button type="button" onClick={() => { navigator(HOME_PATH)}} className={styles['add-user-button']}>
+               Link to homepage
+            </button>
       </div>
       <div className={styles['right-side']}>
         <div className={styles['users-list']}>
