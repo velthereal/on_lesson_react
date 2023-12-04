@@ -1,9 +1,36 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import styles from './singleuser.module.css';
 
 const SingleUserPage = () => {
 	const { id } = useParams();
-	console.log(id);
-	return <div>Single User with ID: {id}</div>
+	const [user, setUser] = useState({});
+	const [fetching, setFetching] = useState(false);
+	const [fetchError, setFetchError] = useState(null);
+	useEffect(function() {
+		setFetching(true);
+		fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+		.then(response => response.json())
+		.then(resp => {
+			setFetching(false);
+			console.log(resp);
+			setUser(resp);
+		})
+		.catch(err => {
+			console.log('err => ', err);
+			setFetching(false);
+			setFetchError(err);
+		});
+	}, []);
+	// console.log(id);
+	return (
+		<div className={styles['common']}>
+			<p><span>Single User with ID:</span> {id}</p>
+			<p><span>Name:</span> {user.name}</p>
+			<p><span>Username:</span> {user.username}</p>
+			<p><span>Email:</span> {user.email}</p>
+		</div>
+	)
 }
 
 export default SingleUserPage;

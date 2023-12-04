@@ -25,23 +25,25 @@ const Products = () => {
 		// console.log('useEffect');
 	}, []);
 	return (
-		<>
+		<div>
 			{/* <div className={styles['common']}>
 				<div>{ fetching && 'Data is loading ...' }</div>
 				<div>{ fetchError && `Opps, we have error: ${fetchError}` }</div>
 			</div> */}
 			<QueryLoader fetching={fetching} error={fetchError} >
-				{ users.map((user, index) => {
-					const { name, email, username, id } = user;
-					return (
-						<UserCard
-							key={index}
-							name={name}
-							email={email}
-							username={username}
-							id={id} />
-					)
-				})}
+				<div className={styles["common"]}>
+					{ users.map((user, index) => {
+						const { name, email, username, id } = user;
+						return (
+							<UserCard
+								key={index}
+								name={name}
+								email={email}
+								username={username}
+								id={id} />
+						)
+					})}
+				</div>
 			</QueryLoader>
 			{/* { console.log('render') } */}
 			{/* <BorderWrapper showDefaultText={false}>
@@ -49,7 +51,7 @@ const Products = () => {
 				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias eius quo fugiat cum? Voluptatem quo molestiae animi, saepe ipsam voluptate consequuntur nesciunt atque error sequi! Distinctio repellendus rem dolor quasi.</p>
 			</BorderWrapper> */}
 
-		</>
+		</div>
 	);
 }
 
