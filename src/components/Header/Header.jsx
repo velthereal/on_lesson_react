@@ -3,7 +3,7 @@ import "./header.css";
 import { UsersContext } from "../../App";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-		import { HOME_PATH, PRODUCTS_PATH, REGISTRATION_PATH, REFINPUT_PATH, } from '../../constants/routes-links';
+		import { HOME_PATH, PRODUCTS_PATH, REGISTRATION_PATH, REFINPUT_PATH, PERSON_PATH, ABOUT_PATH, CONTACTS_PATH, LOCATION_PATH } from '../../constants/routes-links';
 
 const Header = () => {
 
@@ -37,7 +37,10 @@ const Header = () => {
 		<Link to={PRODUCTS_PATH}>Products</Link>
 		<Link to={REGISTRATION_PATH}>Registaration</Link>
 		<Link to='/refinput/hello'>Ref Input</Link>
-		<Link to='/refinput/hello'>Ref Input</Link>
+		<Link to={PERSON_PATH}>Person</Link>
+		<Link to={ABOUT_PATH}>About Us</Link>
+		<Link to={CONTACTS_PATH}>Contacts</Link>
+		<Link to={LOCATION_PATH}>Location</Link>
       {/* {navElements.map((element) => {
         return (
           <NavigationItem
