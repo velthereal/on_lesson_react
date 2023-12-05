@@ -41,7 +41,7 @@ const Header = () => {
 		<Link to={ABOUT_PATH}>About Us</Link>
 		<Link to={CONTACTS_PATH}>Contacts</Link>
 		<Link to={LOCATION_PATH}>Location</Link>
-		<Link to={SINGLE_USER_PATH}>Single User Page</Link>
+		{/* <Link to={SINGLE_USER_PATH}>Single User Page</Link> */}
       {/* {navElements.map((element) => {
         return (
           <NavigationItem

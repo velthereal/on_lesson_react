@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from './singleuser.module.css';
-
+import QueryLoader from "../QueryLoader";
 const SingleUserPage = () => {
 	const { id } = useParams();
 	const [user, setUser] = useState({});
@@ -24,12 +24,14 @@ const SingleUserPage = () => {
 	}, []);
 	// console.log(id);
 	return (
-		<div className={styles['common']}>
-			<p><span>Single User with ID:</span> {id}</p>
-			<p><span>Name:</span> {user.name}</p>
-			<p><span>Username:</span> {user.username}</p>
-			<p><span>Email:</span> {user.email}</p>
-		</div>
+		<QueryLoader fetching={fetching} error={fetchError}>
+			<div className={styles['common']}>
+				<p><span>Single User with ID:</span> {id}</p>
+				<p><span>Name:</span> {user.name}</p>
+				<p><span>Username:</span> {user.username}</p>
+				<p><span>Email:</span> {user.email}</p>
+			</div>
+		</QueryLoader>
 	)
 }
 
