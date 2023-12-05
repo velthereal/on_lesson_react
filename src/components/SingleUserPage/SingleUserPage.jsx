@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from './singleuser.module.css';
 import QueryLoader from "../QueryLoader";
+import { get } from "lodash";
 const SingleUserPage = () => {
 	const { id } = useParams();
 	const [user, setUser] = useState({});
@@ -30,6 +31,7 @@ const SingleUserPage = () => {
 				<p><span>Name:</span> {user.name}</p>
 				<p><span>Username:</span> {user.username}</p>
 				<p><span>Email:</span> {user.email}</p>
+				<p><span>Addres:</span> {get(user, 'address.city')}, {get(user, 'address.street')}</p>
 			</div>
 		</QueryLoader>
 	)
