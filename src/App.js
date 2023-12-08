@@ -1,20 +1,22 @@
 import "./app.css";
+
 import Header from "./components/Header";
-import Footer from "./components/Footer";
-import SingleUserPage from "./components/SingleUserPage";
-// import Main from "./components/Main";
+import HomePage from "./components/HomePage";
 import Products from "./components/Products";
 import RegistrationForm from "./components/RegistrationForm";
 import RefInput from "./components/RefInput";
-import { createContext, useState } from "react";
-import { Routes, Route } from 'react-router';
-import HomePage from "./components/HomePage";
-import { HOME_PATH, PRODUCTS_PATH, REGISTRATION_PATH, REFINPUT_PATH, NOT_FOUND_PATH, SINGLE_USER_PATH, PERSON_PATH, ABOUT_PATH, CONTACTS_PATH, LOCATION_PATH  } from '../src/constants/routes-links';
+import SingleUserPage from "./components/SingleUserPage";
 import NotFoundPage from "./components/NotFoundPage";
 import Person from "./components/Person";
 import AboutUsPage from "./components/AboutUsPage";
 import ContactsPage from "./components/ContactsPage";
 import Location from "./components/Location";
+import Footer from "./components/Footer";
+
+import { createContext, useState } from "react";
+import { Routes, Route } from 'react-router';
+
+import { HOME_PATH, PRODUCTS_PATH, REGISTRATION_PATH, REFINPUT_PATH, NOT_FOUND_PATH, SINGLE_USER_PATH, PERSON_PATH, ABOUT_PATH, CONTACTS_PATH, LOCATION_PATH  } from './constants/routes-links';
 
 export const UsersContext = createContext();
 
@@ -37,7 +39,6 @@ const App = () => {
 			<Route path={NOT_FOUND_PATH} element={<NotFoundPage />} />
 			<Route path={SINGLE_USER_PATH} element={<SingleUserPage />} />
 		</Routes>
-        {/* <Main /> */}
         <Footer />
       </div>
     </UsersContext.Provider>

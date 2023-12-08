@@ -1,19 +1,20 @@
-// import BorderWrapper from '../BorderWrapper';
+import styles from './products.module.css';
+
 import UserCard from "../UserCard";
 import QueryLoader from "../QueryLoader";
-import styles from './products.module.css';
+
 import { useEffect, useState } from 'react';
 
 const Products = () => {
 	const [users, setUsers] = useState([]);
 	const [fetching, setFetching] = useState(false);
 	const [fetchError, setFetchError] = useState(null);
+
 	useEffect(function() {
 		setFetching(true);
 		fetch('https://jsonplaceholder.typicode.com/users')
 		.then(response => response.json())
 		.then(resp => {
-			// console.log(resp);
 			setUsers(resp);
 			setFetching(false);
 		})
@@ -22,14 +23,10 @@ const Products = () => {
 			setFetching(false);
 			setFetchError(err);
 		});
-		// console.log('useEffect');
 	}, []);
+
 	return (
 		<div>
-			{/* <div className={styles['common']}>
-				<div>{ fetching && 'Data is loading ...' }</div>
-				<div>{ fetchError && `Opps, we have error: ${fetchError}` }</div>
-			</div> */}
 			<QueryLoader fetching={fetching} error={fetchError} >
 				<div className={styles["common"]}>
 					{ users.map((user, index) => {
@@ -45,12 +42,6 @@ const Products = () => {
 					})}
 				</div>
 			</QueryLoader>
-			{/* { console.log('render') } */}
-			{/* <BorderWrapper showDefaultText={false}>
-				<div>Hello</div>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias eius quo fugiat cum? Voluptatem quo molestiae animi, saepe ipsam voluptate consequuntur nesciunt atque error sequi! Distinctio repellendus rem dolor quasi.</p>
-			</BorderWrapper> */}
-
 		</div>
 	);
 }

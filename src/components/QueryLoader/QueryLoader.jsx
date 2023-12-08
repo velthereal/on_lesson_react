@@ -1,5 +1,3 @@
-import styles from './queryLoader.module.css';
-
 const QueryLoader = (props) => {
 	const { children, error, fetching } = props;
 

@@ -1,8 +1,8 @@
-import './userCard.css'
+import './userCard.css';
+
 import { Link } from 'react-router-dom';
 
 const UserCard = ({ name, username, email, id, onClickDeleteBtn, onClickUpdateBtn }) => {
-
 	return (
 		<Link to={`/user/${id}`}>
 			<div className='common-user-card'>
