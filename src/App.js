@@ -36,8 +36,8 @@ const App = () => {
 			<Route path={ABOUT_PATH} element={<AboutUsPage />} />
 			<Route path={CONTACTS_PATH} element={<ContactsPage />} />
 			<Route path={LOCATION_PATH} element={<Location />} />
-			<Route path={NOT_FOUND_PATH} element={<NotFoundPage />} />
 			<Route path={SINGLE_USER_PATH} element={<SingleUserPage />} />
+			<Route path={NOT_FOUND_PATH} element={<NotFoundPage />} />
 		</Routes>
         <Footer />
       </div>

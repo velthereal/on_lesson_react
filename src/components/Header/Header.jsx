@@ -34,30 +34,30 @@ const Header = () => {
     	},
   	];
 
-	return (
-    	<header>
-			<Link to={HOME_PATH}>Home</Link>
-			<Link to={PRODUCTS_PATH}>Products</Link>
-			<Link to={REGISTRATION_PATH}>Registaration</Link>
-			<Link to='/refinput/hello'>Ref Input</Link>
-			<Link to={PERSON_PATH}>Person</Link>
-			<Link to={ABOUT_PATH}>About Us</Link>
-			<Link to={CONTACTS_PATH}>Contacts</Link>
-			<Link to={LOCATION_PATH}>Location</Link>
-			<Link to={SINGLE_USER_PATH}>Single User Page</Link>
-      		{/* {navElements.map((element) => {
-        		return (
-          			<NavigationItem
-            			key={element.text}
-            			text={element.text}
-            			isUppercasetext={element.isUppercasetext}
-            			description={element.description}
-          			/>
-        		);
-      		})} */}
-      		<div>User Count: {usersCount}</div>
-    	</header>
-  	);
+  return (
+    <header>
+		<Link to={HOME_PATH}>Home</Link>
+		<Link to={PRODUCTS_PATH}>Products</Link>
+		<Link to={REGISTRATION_PATH}>Registaration</Link>
+		<Link to='/refinput/hello'>Ref Input</Link>
+		<Link to={PERSON_PATH}>Person</Link>
+		<Link to={ABOUT_PATH}>About Us</Link>
+		<Link to={CONTACTS_PATH}>Contacts</Link>
+		<Link to={LOCATION_PATH}>Location</Link>
+		<Link to={SINGLE_USER_PATH}>Single User Page</Link>
+      {/* {navElements.map((element) => {
+        return (
+          <NavigationItem
+            key={element.text}
+            text={element.text}
+            isUppercasetext={element.isUppercasetext}
+            description={element.description}
+          />
+        );
+      })} */}
+      <div>User Count: {usersCount}</div>
+    </header>
+  );
 };
 
 export default Header;

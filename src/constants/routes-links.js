@@ -7,4 +7,4 @@ export const ABOUT_PATH = '/about';
 export const CONTACTS_PATH = '/contacts';
 export const LOCATION_PATH = '/location';
 export const NOT_FOUND_PATH = '*';
-export const SINGLE_USER_PATH = '/user/:id?';
+export const SINGLE_USER_PATH = '/user/:id';
